@@ -1,1 +1,0 @@
-# Wojo Software
