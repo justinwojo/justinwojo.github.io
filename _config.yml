@@ -21,18 +21,14 @@ description: >- # this means to ignore newlines until "baseurl:"
   blogs, articles, documents, etc. that I find valuable and want to share.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://wojosoftware.com" # the base hostname & protocol for your site, e.g. http://example.com
-github_username:  justinwojo
-linkedin_username: justin-wojciechowski
-facebook_username: wojomojo
-youtube_username: WuigiBearX
 repository: "justinwojo/justinwojo.github.io"
 
 minimal_mistakes_skin: "dark" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum" "sunrise"
 
 # Build settings
 markdown: kramdown
-theme: minimal-mistakes-jekyll
-# remote_theme: "mmistakes/minimal-mistakes@4.14.2"
+# theme: minimal-mistakes-jekyll
+remote_theme: "mmistakes/minimal-mistakes@4.14.2"
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
