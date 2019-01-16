@@ -10,7 +10,7 @@ source "https://rubygems.org"
 # Happy Jekylling!
 # gem "jekyll", "~> 3.8.5"
 
-# This is the default theme for new Jekyll sites. You may change this to anything you like.
+# Comment this line for GithubPages, uncomment for local debugging
 # gem "minimal-mistakes-jekyll"
 
 # If you want to use GitHub Pages, remove the "gem minimal-mistakes-jekyll above and

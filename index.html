@@ -1,3 +1,31 @@
 ---
 layout: home
+permalink: /
+title: Welcome!
+intro: This is just a test
+header:
+  overlay_color: "#000"
+  overlay_filter: "0.3"
+  overlay_image: /assets/images/headerdark.jpg
+excerpt: "Welcome to my page! You will find various blogs about software, tech, automotive, and everything in between."
+feature_row2:
+  - image_path: /assets/images/softwareblogs.jpg
+    alt: "Software Blogs"
+    title: "Blogs about Software"
+    excerpt: 'These blogs are focused around anything software related. You will find blogs focused around Xamarin, mobile development, and Continuous Integration and Delivery systems.'
+    url: "/software/"
+    btn_label: "Go To Software Blogs"
+    btn_class: "btn--primary"
+feature_row3:
+  - image_path: /assets/images/autoblogs.jpg
+    alt: "Automotive Blogs"
+    title: "Blogs about Automotive"
+    excerpt: 'All blogs here are discussions of various automotive topics. These may be autocross related discussions, reviewing cars or car parts, and anything else involving cars.'
+    url: "/automotive/"
+    btn_label: "Go To Auto Blogs"
+    btn_class: "btn--primary"
 ---
+
+{% include feature_row id="feature_row2" type="left" %}
+
+{% include feature_row id="feature_row3" type="right" %}

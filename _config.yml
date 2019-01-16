@@ -83,9 +83,18 @@ footer:
 
 # Outputting
 permalink: /:categories/:title/
-paginate: 5 # amount of posts to show
-paginate_path: /page:num/
+#paginate: 5 # amount of posts to show
+#paginate_path: /page:num/
 timezone: America/Chicago # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+
+# Collections
+collections:
+  software:
+    output: true
+    permalink: /:collection/:path/
+  automotive:
+    output: true
+    permalink: /:collection/:path/
 
 # Defaults
 defaults:
@@ -107,6 +116,24 @@ defaults:
     values:
       layout: single
       author_profile: true
+  # _software
+  - scope:
+      path: ""
+      type: software
+    values:
+      layout: single
+      author_profile: true
+      share: true
+      comments: true
+  # _automotive
+  - scope:
+      path: ""
+      type: automotive
+    values:
+      layout: single
+      author_profile: true
+      share: true
+      comments: true
 
 # Reading Files
 include:
