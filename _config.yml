@@ -87,6 +87,15 @@ permalink: /:categories/:title/
 #paginate_path: /page:num/
 timezone: America/Chicago # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
+comments:
+  provider: "google-plus"
+
+# Analytics
+analytics:
+  provider: "google"
+  google:
+    tracking_id: UA-132780071-1
+
 # Collections
 collections:
   software:
@@ -123,6 +132,7 @@ defaults:
     values:
       layout: single
       author_profile: true
+      read_time: true
       share: true
       comments: true
   # _automotive
@@ -132,6 +142,7 @@ defaults:
     values:
       layout: single
       author_profile: true
+      read_time: true
       share: true
       comments: true
 
