@@ -88,7 +88,9 @@ permalink: /:categories/:title/
 timezone: America/Chicago # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 comments:
-  provider: "google-plus"
+  provider: "disqus"
+  disqus:
+    shortname: "wojosoftware"
 
 # Analytics
 analytics:
