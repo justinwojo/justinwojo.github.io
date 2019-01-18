@@ -15,6 +15,8 @@ Autocross is built around cones. They are the guiding force in this motorsport. 
 In general, every autocross event will implement a cone penalty. Whenever you knock a cone out of its box, or tip it over, will result in a 1 or 2 second (typically 2 second) penalty to your time. Autocross courses are designed so that it will never be advantangeous to intentionally knock over a cone to get a better lap time. You can hit the cone and not get penalized if the cone remains standing up and any part of the cone remains inside of the dedicated box. The image below shows this well.
 ![Cone Box](/assets/images/conepenalty.jpg)
 
+You can also DNF (Did Not Finish) by driving on the wrong side of the cones, or missing a cone gate. This will result in your time not counting for that specific run. 
+
 ### Car Classing
 This is another rule that is dependent upon the host of the event. Some events create their own rules around what car competes against another car. It's not fair if a McLaren 720S is put up against a stock 2002 Honda Civic Si, so typically these cars are put into different classes. Some events organize classes by number of cylinders in an engine, tire treadwear rating, and other various factors. 
 
