@@ -23,7 +23,8 @@ The most commonly used car classing rules are those posted in the [SCCA National
 ### Car Safety Tech Inspection and Helmet
 Again, mostly dependent upon the event organization and what rules they abide by. Each car needs to go through a basic tech inspection that makes sure the wheels won't fall off, the brakes work, the battery is secure, and there's no other satefy hazards. You also need a helmet that likely will need to be Snell 2010 rated or newer. Some events have helmet rentals, but be sure to check first if you don't have one.
 
-### (more to come here)
+### SCCA National Solo Rules
+This deserves it's own segment. The [SCCA National Solo](https://www.scca.com/pages/solo-cars-and-rules) rules are usually the law of the land as far as autocross goes. This documents rules around noise regulations, passengers being allowed or not, car classing, and everything else. It's modified every year and updated for new cars, as well as moving cars around to different classes depending on nationals results. It's quite lengthy, so I don't recommend trying to read it all, but as you progress through autocross and want to try compete and win up to the national level, you need to know and understand this rulebook.
 
 Here's an example of me racing in autocross in my Mustang GT. This gives you a good idea of how it works.
 {% include video id="KfRHAl2WV74" provider="youtube" %}
