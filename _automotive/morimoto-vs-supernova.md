@@ -12,37 +12,39 @@ This review will cover the Morimoto 2Stroke 2.0 LED kit against the SuperNova V.
 # Morimoto 2Stroke 2.0
 The [Morimoto 2Stroke 2.0 LED conversion kit](http://www.morimotohid.com/9005-led-headlight-bulbs-morimoto-2stroke.html) came to market in late 2018. These are a replacement to their previous generation 2Stroke LED kit. The new 2Stroke 2.0's are a smaller form factor to fit almost every application with ease, along with improved light output and better reproduction of halogen bulbs due to the design of the copper board and the new Philip's Z ES chips.
 
-## Pricing
+### Pricing
 The Morimoto 2Stroke 2.0 can be purchased directly from the morimoto website for $145, but can be found at other reputable vendors for $120. I will talk more below about where to buy these along with the SuperNova headlights later in this post.
 
-## Specs
+### Specs
 The new generation 2Stroke 2.0's have some pretty good specs as shown below:
+
 | Lumen Per Bulb | Kelvin (color) | Input Power Per Bulb | Draw        |
 |----------------|----------------|----------------------|-------------|
 | 2440lm         | 5700k          | 23w                  | 1.9A 12V DC |
 
-## Warranty
+### Warranty
 The Morimoto 2Stroke 2.0's come with a 3 year manufacturer warranty.
 
 # SuperNova V.4
 The [SuperNova V.4 LED conversion kit](https://headlightrevolution.com/led-headlight-bulbs/supernova-v-4-led-headlight-bulbs/) came to market in late 2018 as well. These are a replacement to their previous generation SuperNova V.3 kit which was very popular. The new V.4 moved from a flexible heat sink design to a standard CNC machined aluminum heat sink with a fan to assist cooling. The new V.4's also use the newest CREE NLW1860CV2 chips, which allow one continuous diode without gaps between them like the Morimoto. This results in a better light pattern that's very similar to a halogen bulb.
 
-## Pricing
+### Pricing
 The SuperNova V.4 LED kit can be purchased for $159-$169, depending on the type of kit you need for your application. I will discuss where to buy later in this post.
 
-## Specs
+### Specs
 The new generation SuperNova V.4 have some pretty insane specs as shown below:
+
 | Lumen Per Bulb | Kelvin (color) | Input Power Per Bulb | Draw        |
 |----------------|----------------|----------------------|-------------|
 | 3600lm         | 6000k          | 36w                  | 2.5A 14V DC |
 
-## Warranty
+### Warranty
 The SuperNova V.4's come with a 2 year manufacturer warranty.
 
 # Comparison
 I know this is the part everyone wants to see. How do these things compare? Which one should I buy? What differences in pricing are there? I will go into depth below as well as pictures for your viewing pleasure.
 
-## Size and Design
+### Size and Design
 It's important to understand the differences between these two kits as far as size goes. The 2Stroke 2.0's are tiny in comparison to the SuperNova V4's, both in the driver and the heatsink. The larger the heatsink and driver, the harder it will be to fit these nicely inside of a headlight housing.
 
 ![Side-By-Side Full](/assets/images/ledlights/sidebysidefull.jpg)
@@ -55,13 +57,13 @@ Below, you'll see a much closer side-by-side comparison, showcasing some of the 
 
 The SuperNova utilizes a new CREE chip that utilizes one continuous diode compared to the Morimoto design incorporating three individual Philips Z ES chips.
 
-## Color
+### Color
 These two are extremely similar as far as color goes. The SuperNova's 6000k Kelvin rating results in them having a slightly more cool blue tint than the Morimoto's 5700k Kelvin rating. One thing I found interesting is the Morimoto box advertises the 2Stroke 2.0 as 5500k, but the website says 5700k. Either way, the difference is mostly negligible, with the SuperNova's having ever so slightly more of a cool blue tint. Subjectively, I noticed an ever so slight difference between the two. In the section below, you'll see a side-by-side against a garage door, and can notice a difference in color.
 
-## Noise
+### Noise
 You might be wondering why there's a noise category. In order to drive LED's to the intensity needed for headlights, they tend to generate some heat. Each light has a heatsink to help with this heat management, but that's not enough. Each use a fan to aid in cooling, which generate some noise. The Morimoto 2Stroke 2.0's are very loud, and I've had people constantly ask "what's that noise" when my headlights are on. You don't hear them from inside the car, but if you get out and the lights are on, they're definitely noticable. The SuperNova's on the other hand are almost silent. I really appreciate that coming from the Morimoto's. You can just barely hear the fans humming, but nothing anyone would notice unless I told them.
 
-## Light Output
+### Light Output
 In order to be able to measure light output instead of a subjective measurement, I used a digital Lux meter to capture the Lux measurement at 25 feet.
 
 Lux is a measurement of how many lumens per square meter. In essence, it's a measurement of the amount of visible light present. As you shine your headlights at a wall and slowly back away, the light is distributed over a greater area. This results in any given square meter having less lumens or "brightness". What matters most when comparing LUX between 2 different bulbs is that they're measured at the same distance and same housing.
