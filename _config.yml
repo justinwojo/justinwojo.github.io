@@ -24,6 +24,7 @@ url: "http://wojosoftware.com" # the base hostname & protocol for your site, e.g
 repository: "justinwojo/justinwojo.github.io"
 
 minimal_mistakes_skin: "dark" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum" "sunrise"
+words_per_minute: 140
 
 # Build settings
 markdown: kramdown

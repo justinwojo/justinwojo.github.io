@@ -66,7 +66,9 @@ You might be wondering why there's a noise category. In order to drive LED's to 
 ### Light Output
 In order to be able to measure light output instead of a subjective measurement, I used a digital Lux meter to capture the Lux measurement at 25 feet.
 
-Lux is a measurement of how many lumens per square meter. In essence, it's a measurement of the amount of visible light present. As you shine your headlights at a wall and slowly back away, the light is distributed over a greater area. This results in any given square meter having less lumens or "brightness". What matters most when comparing LUX between 2 different bulbs is that they're measured at the same distance and same housing.
+Lux is a measurement of lumens in a square meter. In essence, it's a measurement of the amount of visible light present. As you shine your headlights at a wall and slowly back away, the light is distributed over a greater area. This results in any given square meter having less lumens or "brightness". What matters most when comparing LUX between 2 different bulbs is that they're measured at the same distance and same housing. The photo below shows how the LUX measurement process works.
+
+![Lux Measurement](/assets/images/ledlights/luxreading.jpg)
 
 Below is the maximum Lux measurement I was able to get from each LED kit in my 2015 Ford Explorer Sport Projector headlights at 25 feet. The left side is the Morimoto 2Stroke 2.0, and the right is the SuperNova V.4's.
 
@@ -76,7 +78,7 @@ As you can see, the SuperNova measured a maximum Lux of 414.7 as compared to the
 
 Light pattern is also extremely important with LED headlights. If the diode's don't accurately represent the original halogen bulb, you aren't going to have the correct hotspots and pattern necessary, and may blind incoming drivers. Below is an example side-by-side of the light pattern of the Morimoto's and the SuperNova's in my Explorer's projector headlights. I apoligize for not centering myself better in my driveway for the Morimoto picture as compared to the SuperNova's. Also, keep in mind my driveway has a steep incline, so the light might seem high, but it's just the angle I'm sitting. These shots are taken from exactly 25 feet away.
 
-![Lux Comparison](/assets/images/ledlights/doorcomparison.jpg)
+![Door Comparison](/assets/images/ledlights/doorcomparison.jpg)
 
 As you can see above, the light patterns, intensity, and hot spots are a bit different. The SuperNova has a much cleaner pattern, with more defined hotspots to help see further down the road. The Morimoto's have a pretty good pattern as well, but don't do as good of a job as the SuperNova's as far as creating those important hotspots. I'm not a light expert, but the SuperNova's do a very good job reproducing the original halogen light pattern.
 
@@ -84,11 +86,11 @@ I did not capture any night shots of the Morimoto's (sorry), but I have a couple
 
 Here are the SuperNova's in my Explorer's projector headlights on low (sorry for the blur). Once I'm able to get better pictures of the light output, I will update this post.
 
-![Lux Comparison](/assets/images/ledlights/supernovadim.jpg)
+![SuperNova Dim](/assets/images/ledlights/supernovadim.jpg)
 
 Here are the SuperNova's in my Explorer's projector headlights on high beams.
 
-![Lux Comparison](/assets/images/ledlights/supernovabright.jpg)
+![SuperNova Bright](/assets/images/ledlights/supernovabright.jpg)
 
 # Where To Buy
 I definitely recommend checking out both [The Retrofit Source](https://www.theretrofitsource.com/) and [Headlight Revolution](https://headlightrevolution.com/) for your lighting needs. The Retrofit Source has the Morimoto's for $120 but do not sell the SuperNova's. Headlight Revolution has both the Morimoto's and SuperNova's on their website.
@@ -97,5 +99,7 @@ I actually had an issue with one of my SuperNova V.4's, and [Headlight Revolutio
 
 # Final Thoughts
 Overall, both options are good alternatives to halogen bulbs. LED's last an extremely long time, use less power, and have a much more attractive color. I think they still have a little bit to go to be a perfect replacement to HID's, but given a couple of more years I'm sure they'll get there.
+
+Between the two, I would lean towards the SuperNova V.4's due to the brigher light output, better pattern, and quieter fan. My only wish for the SuperNova's is a smaller driver similar to that of the Morimoto's.
 
 Thanks for reading, and feel free to comment below with any questions. I'd be glad to assist if I can!
