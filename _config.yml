@@ -46,13 +46,16 @@ whitelist:
   - jemoji
   - jekyll-include-cache
 
-# Site Author
+# Site Author (icons used from https://fontawesome.com/icons?d=gallery)
 author:
   name             : *name # *name is a YAML reference pointing to the &anchor earlier
   avatar           : "/assets/images/justinheadshot.jpg"
   bio              : "Senior Software Engineer with a love for all things Automotive."
   location         : "Eden Prairie, MN"
   links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope"
+      url: "mailto:justin@wojosoftware.com"
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
       url: "https://www.linkedin.com/in/justin-wojciechowski/"
@@ -107,6 +110,9 @@ collections:
   automotive:
     output: true
     permalink: /:collection/:path/
+  tech:
+    output: true
+    permalink: /:collection/:path/
 
 # Defaults
 defaults:
@@ -142,6 +148,16 @@ defaults:
   - scope:
       path: ""
       type: automotive
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      share: true
+      comments: true
+# _tech
+  - scope:
+      path: ""
+      type: tech
     values:
       layout: single
       author_profile: true
