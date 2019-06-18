@@ -4,9 +4,11 @@ excerpt: "The must-use framework when building a Xamarin cross-platform applicat
 classes: wide
 ---
 When I started working with Xamarin many years ago, I first worked with a project built with Model-View-Controller (MVC) design. MVC is pretty straightforward, you have a model for business logic, rules, and data, a view for the user to interact with, and a controller which is basically the middle-man between the model and view. A controller determines what view to serve to the user along with any model data it may require. The graph below is extremely simplified, but it shows the relation between each major component. Notice the model doesn't have any arrows pointing away. This is due to the model not having any dependency on the view or the controller. This is helpful as you can build and test the model independently of the the view and controller. It's a pretty common design pattern that's been around since the 70's. I enjoyed working with it, but I found myself writing a lot of boilerplate code in the controller to listen to view events and to return data back to the view.
+
 ![MVC](/assets/images/mvvmcross/mvc.PNG)
 
 When working with a single platform/view type, the boilerplate code isn't all that terrible, but when incorporating even a second platform or more, it starts to get repetive. For example, if you're writing a mobile application in Xamarin for iOS and Android and you were using an MVC design pattern, you'd have controller logic for iOS and Android independently to handle user interaction, serve up views, and more. In order to solve the issue of writing all of the boilerplate code in the controller, we need some way to connect the view components directly to the data and vice versa. Instead of wiring up each individual click event or data entry independently on each platform, we want a way to do this simply and easily in a cross-platform fashion. Enter the Model-View-ViewModel (MVVM) design pattern. A few architects from Microsoft created and incorporated the MVVM design pattern into Windows Presentation Foundation (WPF) and Silverlight back in the early to mid 2000's. The basic concept of MVVM is that you utilize something called binding between a view and a viewmodel. What this allows you to do is have a single viewmodel that can be utilized on multiple platforms to handle click events, text entry, and provide the state of the view at any time. This makes it extremely easy to connect your view to the data without writing boilerplate code as I mentioned above. Similar to MVC, you still use models to represent your domain model and business logic.
+
 ![MVVM](/assets/images/mvvmcross/mvvm.PNG)
 
 Xamarin has support for Data Binding out of the box, but only if you're utilizing Xamarin.Forms as your view framework. If you're like me and don't use Forms, you'll be stuck looking for an alternative. Fortunately there's a few awesome open source projects that provide not only support for data binding, but a whole suite of additional tools and helpers to make writing great cross-platform apps even easier. Today we'll be chatting about MvvmCross, but there's many other good frameworks out there.
@@ -25,7 +27,7 @@ So how does that look in code? I'll walk through the above samples of how they'd
 
 First, we'll start with the ViewModel. In this example, I won't be using a Model, but in more complex examples you'd definitely want to utilize one.
 
-~~~ C#
+~~~ csharp
 class MyViewModel : MvxViewModel
 {
     private IService _service;
@@ -65,7 +67,7 @@ The above ViewModel is pretty straightforward and would exist in either a PCL or
 
 Next, we'll show how this binding would be connected within an Android layout file (.axml). You can also bind via C# code which I'll showcase in the iOS example below, but I'll just show the binding directly in axml.
 
-~~~ XML
+~~~ xml
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -89,7 +91,7 @@ Above is an extremely simple Android layout file. It's just an EditText field an
 
 Last but not least is iOS. We'll be writing the View code in C# in this example, but binding works great with Storyboard's and XIB's as well.
 
-~~~ C#
+~~~ csharp
 class MyView : MvxViewController<MyViewModel>
 {
     UITextField _messageField;
@@ -133,7 +135,7 @@ Easily the second best perk of MvvmCross is ViewModel navigation. I will be writ
 
 To build off the above Data Binding example, we'll bring the user to a new loading page when they click submit. So, we'd create another ViewModel and View as normal, but we'll switch out the ICommand event method to utilize the NavigationService provided by MvvmCross. 
 
-~~~ C#
+~~~ csharp
 class MyViewModel : MvxViewModel
 {
     private IMvxNavigationService _navService;
@@ -163,7 +165,7 @@ If you've looked at any of my above ViewModel examples, you may have seen me spe
 
 In order to register and then recieve objects through the Service Locator, we must interact with the IoCProvider Singleton provided by MvvmCross. I'll show this in a code snippet below. These registrations would usually be done during startup lifecycles in the app, but we'll just put them in a few methods for brevity sakes.
 
-~~~ C#
+~~~ csharp
 public void RegisterServices()
 {
     //Create a new Foo, and register it as a singleton against the IFoo interface.
@@ -201,13 +203,13 @@ When utilizing Data Binding, you'll find yourself wanting to convert the bound d
 
 So, here's how we'd setup the Visibility binding on each platform. First is Android through the axml file, and second is iOS through fluent binding in code.
 
-~~~ XML
+~~~ xml
 <EditText
     android:layout_width="300dp"
     android:layout_height="wrap_content"
     local:MvxBind="Text MessageFieldText; Visibility Visibility(MessageFieldVisible)" />
 ~~~
-~~~ C#
+~~~ csharp
 public override void ViewDidLoad()
 {
     var set = this.CreateBindingSet<MyView, MyViewModel>();
@@ -223,7 +225,7 @@ public override void ViewDidLoad()
 Above is a platform specific converter for the UI. There's many other converters that exist for the UI, such as Color converters, Language converters, and more. You can also use converters for something simple like abbreviating a name if the ViewModel property is too long, or converting a DateTime object to a readable string.
 
 You can of course also create your own custom converters by creating a class and inheriting from MvxValueConverter, passing in type arguements for the type coming in, and the type going out. For example, if you wanted to convert a DateTime in your ViewModel to a string to display on a label, you'd create a class, inherit from MvxValueConverter<DateTime, string> and override the Convert method. Below is a simple example.
-~~~ C#
+~~~ csharp
 public class DateTimeValueConverter : MvxValueConverter<DateTime, string>
 {
     protected override string Convert(DateTime value, Type targetType, object parameter, CultureInfo cultureInfo)
@@ -262,4 +264,4 @@ There's also a [Xamarin Chat Slack](https://xamarinchat.herokuapp.com/) with a d
 You'll also run into various blogs, articles, forum posts, and websites along the way with helpful material. 
 
 # Conclusion
-In my opinion, if you're using the Xamarin framework, there's really no reason not to utilize an Mvvm framework such as MvvmCross. It will speed up your development time, increase code sharing, reduce boilerplate code, and more. It's also much easier to have some general .NET develoeprs or C# guru's that can write core code, and have some people who specialize in writing the View code on each platform. This reduces the need to have seperate talent to write Kotlin/Java and Swift/Objective-C code for example. It also means you can write your business logic once and share it between platforms which is extremely beneficial. If you have the financial means and time to write apps using their more native approaches, I would always recommend that over utilizing Xamarin purely from an app size and speed perspective.
+In my opinion, if you're using the Xamarin framework, there's really no reason not to utilize an Mvvm framework such as MvvmCross. It will speed up your development time, increase code sharing, reduce boilerplate code, and more. It's also much easier to have some general .NET developers or C# guru's that can write core code, and have some people who specialize in writing the View code on each platform. This reduces the need to have seperate talent to write Kotlin/Java and Swift/Objective-C code for example. It also means you can write your business logic once and share it between platforms which is extremely beneficial. If you have the financial means and time to write apps using their more native approaches, I would always recommend that over utilizing Xamarin purely from an app size and speed perspective.
