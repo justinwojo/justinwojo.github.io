@@ -50,7 +50,7 @@ whitelist:
 author:
   name             : *name # *name is a YAML reference pointing to the &anchor earlier
   avatar           : "/assets/images/justinheadshot.jpg"
-  bio              : "Senior Software Engineer with a love for all things Automotive."
+  bio              : "Lead Software Engineer with a love for all things Automotive."
   location         : "Eden Prairie, MN"
   links:
     - label: "Email"
