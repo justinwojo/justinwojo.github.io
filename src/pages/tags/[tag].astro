@@ -1,0 +1,49 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import BlogCard from '../../components/BlogCard.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  const tags = [...new Set(posts.flatMap((post) => post.data.tags))];
+
+  return tags.map((tag) => ({
+    params: { tag },
+    props: {
+      tag,
+      posts: posts
+        .filter((post) => post.data.tags.includes(tag))
+        .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf()),
+    },
+  }));
+}
+
+const { tag, posts } = Astro.props;
+---
+
+<PageLayout title={`Posts tagged "${tag}"`}>
+  <div class="mb-8">
+    <a href="/blog" class="text-sm text-[var(--color-accent)] hover:text-[var(--color-accent-hover)] transition-colors">
+      &larr; All posts
+    </a>
+  </div>
+
+  <h1 class="mb-2 text-3xl font-bold text-[var(--color-text)]">
+    #{tag}
+  </h1>
+  <p class="mb-8 text-[var(--color-text-muted)]">
+    {posts.length} post{posts.length !== 1 ? 's' : ''} tagged with "{tag}"
+  </p>
+
+  <div class="grid gap-4">
+    {posts.map((post) => (
+      <BlogCard
+        title={post.data.title}
+        description={post.data.description}
+        date={post.data.date}
+        tags={post.data.tags}
+        slug={post.id.replace(/\.md$/, '')}
+      />
+    ))}
+  </div>
+</PageLayout>

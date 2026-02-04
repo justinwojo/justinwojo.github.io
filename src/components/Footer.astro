@@ -1,0 +1,32 @@
+---
+const socialLinks = [
+  { href: 'https://www.linkedin.com/in/justin-wojciechowski/', label: 'LinkedIn' },
+  { href: 'https://github.com/justinwojo', label: 'GitHub' },
+  { href: 'https://www.youtube.com/user/WuigiBearX', label: 'YouTube' },
+  { href: 'mailto:justin@wojosoftware.com', label: 'Email' },
+];
+
+const year = new Date().getFullYear();
+---
+
+<footer class="mt-auto border-t border-[var(--color-border)] bg-[var(--color-bg)]">
+  <div class="mx-auto flex max-w-4xl flex-col items-center gap-4 px-6 py-8 sm:flex-row sm:justify-between">
+    <p class="text-sm text-[var(--color-text-muted)]">
+      &copy; {year} Justin Wojciechowski
+    </p>
+    <ul class="flex items-center gap-5">
+      {socialLinks.map(({ href, label }) => (
+        <li>
+          <a
+            href={href}
+            target={href.startsWith('mailto:') ? undefined : '_blank'}
+            rel={href.startsWith('mailto:') ? undefined : 'noopener noreferrer'}
+            class="text-sm text-[var(--color-text-muted)] hover:text-[var(--color-accent)] transition-colors"
+          >
+            {label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</footer>

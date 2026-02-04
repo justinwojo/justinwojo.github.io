@@ -1,0 +1,37 @@
+---
+const navLinks = [
+  { href: '/', label: 'Home' },
+  { href: '/blog', label: 'Blog' },
+  { href: '/about', label: 'Resume' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="border-b border-[var(--color-border)] bg-[var(--color-bg)]">
+  <nav class="mx-auto flex max-w-4xl items-center justify-between px-6 py-4">
+    <a href="/" class="text-lg font-semibold text-[var(--color-text)] hover:text-[var(--color-accent)] transition-colors">
+      Justin Wojciechowski
+    </a>
+    <ul class="flex items-center gap-6">
+      {navLinks.map(({ href, label }) => {
+        const isActive = href === '/' ? currentPath === '/' : currentPath.startsWith(href);
+        return (
+          <li>
+            <a
+              href={href}
+              class:list={[
+                'text-sm font-medium transition-colors',
+                isActive
+                  ? 'text-[var(--color-accent)]'
+                  : 'text-[var(--color-text-muted)] hover:text-[var(--color-text)]',
+              ]}
+            >
+              {label}
+            </a>
+          </li>
+        );
+      })}
+    </ul>
+  </nav>
+</header>

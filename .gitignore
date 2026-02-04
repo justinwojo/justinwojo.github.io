@@ -1,14 +1,22 @@
-*.gem
+# dependencies
+node_modules/
+
+# build
+dist/
+.astro/
+
+# environment
+.env
+.env.*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# editor
 *.sublime-project
 *.sublime-workspace
-.bundle
-.DS_Store
-.jekyll-metadata
-.sass-cache
-_asset_bundler_cache
-_site
-codekit-config.json
-example/_site
-Gemfile.lock
-node_modules
+.vscode/
+
+# debug
 npm-debug.log*

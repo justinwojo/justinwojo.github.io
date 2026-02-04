@@ -1,13 +1,16 @@
 ---
-title:  "Morimoto 2Stroke 2.0 vs. SuperNova V.4 LED Lights"
-excerpt: "An article with some side-by-side comparison of two popular LED conversion kits"
-classes: wide
+title: "Morimoto 2Stroke 2.0 vs. SuperNova V.4 LED Lights"
+description: "An article with some side-by-side comparison of two popular LED conversion kits"
+date: 2019-02-03
+tags: ["automotive"]
+image: "/images/autoblogs.jpg"
 ---
+
 As of recently, LED conversion kits have started getting closer and closer to the performance and light pattern of a typical oem HID or aftermarket HID conversion kit. If a car has factory HID headlights, there's no gain of switching to LED other than longevity. Most use cases for LED conversion kits are for those running factory halogen headlights. With these newer generation LED kits, the LED's are starting to mimick the output of a halogen bulb closer than they ever have before. This means it will produce the correct light pattern and hotspots that are necessary.
 
 This review will cover the Morimoto 2Stroke 2.0 LED kit against the SuperNova V.4 LED kit.
 
-![Box Side-By-Side](/assets/images/ledlights/box.jpg)
+![Box Side-By-Side](/images/ledlights/box.jpg)
 
 # Morimoto 2Stroke 2.0
 The [Morimoto 2Stroke 2.0 LED conversion kit](http://www.morimotohid.com/9005-led-headlight-bulbs-morimoto-2stroke.html) came to market in late 2018. These are a replacement to their previous generation 2Stroke LED kit. The new 2Stroke 2.0's are a smaller form factor to fit almost every application with ease, along with improved light output and better reproduction of halogen bulbs due to the design of the copper board and the new Philip's Z ES chips.
@@ -47,13 +50,13 @@ I know this is the part everyone wants to see. How do these things compare? Whic
 ### Size and Design
 It's important to understand the differences between these two kits as far as size goes. The 2Stroke 2.0's are tiny in comparison to the SuperNova V4's, both in the driver and the heatsink. The larger the heatsink and driver, the harder it will be to fit these nicely inside of a headlight housing.
 
-![Side-By-Side Full](/assets/images/ledlights/sidebysidefull.jpg)
+![Side-By-Side Full](/images/ledlights/sidebysidefull.jpg)
 
 As you can see above, the Morimoto has a much smaller driver, which I can attest makes installation and fit an absolute breeze compared the larger driver of the SuperNova's. The heatsink design is also more compact on the Morimoto, with an internal fan versus the SuperNova's external fan.
 
 Below, you'll see a much closer side-by-side comparison, showcasing some of the differences between the LED's on the board, as well as the heatsink designs.
 
-![Side-By-Side Close](/assets/images/ledlights/sidebyside.jpg)
+![Side-By-Side Close](/images/ledlights/sidebyside.jpg)
 
 The SuperNova utilizes a new CREE chip that utilizes one continuous diode compared to the Morimoto design incorporating three individual Philips Z ES chips.
 
@@ -68,17 +71,17 @@ In order to be able to measure light output instead of a subjective measurement,
 
 Lux is a measurement of lumens in a square meter. In essence, it's a measurement of the amount of visible light present. As you shine your headlights at a wall and slowly back away, the light is distributed over a greater area. This results in any given square meter having less lumens or "brightness". What matters most when comparing LUX between 2 different bulbs is that they're measured at the same distance and same housing. The photo below shows how the LUX measurement process works.
 
-![Lux Measurement](/assets/images/ledlights/luxreading.jpg)
+![Lux Measurement](/images/ledlights/luxreading.jpg)
 
 Below is the maximum Lux measurement I was able to get from each LED kit in my 2015 Ford Explorer Sport Projector headlights at 25 feet. The left side is the Morimoto 2Stroke 2.0, and the right is the SuperNova V.4's.
 
-![Lux Comparison](/assets/images/ledlights/lux.jpg)
+![Lux Comparison](/images/ledlights/lux.jpg)
 
 As you can see, the SuperNova measured a maximum Lux of 414.7 as compared to the Morimoto's maximum Lux of 339. This means the SuperNova V.4's are roughly 22% brighter than the Morimoto's in my testing. Please note that results do vary, and there's a lot of factors going into this measurement such as housing type, bulb type, Lux measurement tool, and more.
 
 Light pattern is also extremely important with LED headlights. If the diode's don't accurately represent the original halogen bulb, you aren't going to have the correct hotspots and pattern necessary, and may blind incoming drivers. Below is an example side-by-side of the light pattern of the Morimoto's and the SuperNova's in my Explorer's projector headlights. I apoligize for not centering myself better in my driveway for the Morimoto picture as compared to the SuperNova's. Also, keep in mind my driveway has a steep incline, so the light might seem high, but it's just the angle I'm sitting. These shots are taken from exactly 25 feet away.
 
-![Door Comparison](/assets/images/ledlights/doorcomparison.jpg)
+![Door Comparison](/images/ledlights/doorcomparison.jpg)
 
 As you can see above, the light patterns, intensity, and hot spots are a bit different. The SuperNova has a much cleaner pattern, with more defined hotspots to help see further down the road. The Morimoto's have a pretty good pattern as well, but don't do as good of a job as the SuperNova's as far as creating those important hotspots. I'm not a light expert, but the SuperNova's do a very good job reproducing the original halogen light pattern.
 
@@ -86,11 +89,11 @@ I did not capture any night shots of the Morimoto's (sorry), but I have a couple
 
 Here are the SuperNova's in my Explorer's projector headlights on low (sorry for the blur). Once I'm able to get better pictures of the light output, I will update this post.
 
-![SuperNova Dim](/assets/images/ledlights/supernovadim.jpg)
+![SuperNova Dim](/images/ledlights/supernovadim.jpg)
 
 Here are the SuperNova's in my Explorer's projector headlights on high beams.
 
-![SuperNova Bright](/assets/images/ledlights/supernovabright.jpg)
+![SuperNova Bright](/images/ledlights/supernovabright.jpg)
 
 # Where To Buy
 I definitely recommend checking out both [The Retrofit Source](https://www.theretrofitsource.com/) and [Headlight Revolution](https://headlightrevolution.com/) for your lighting needs. The Retrofit Source has the Morimoto's for $120 but do not sell the SuperNova's. Headlight Revolution has both the Morimoto's and SuperNova's on their website.

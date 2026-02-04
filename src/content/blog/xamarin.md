@@ -1,11 +1,14 @@
 ---
-title:  "What is Xamarin"
-excerpt: "This blog talks about Xamarin, what it is, and why I like it!"
-classes: wide
+title: "What is Xamarin"
+description: "This blog talks about Xamarin, what it is, and why I like it!"
+date: 2019-01-20
+tags: ["software"]
+image: "/images/softwareblogs.jpg"
 ---
+
 Xamarin is a cross-platform framework owned by Microsoft utilizing the C# coding language. The framework allows code sharing between Android, iOS, MacOS and Windows applications. Xamarin was originally created by the company that created Mono, but was purchased by Microsoft in 2016.
 
-Check it out on github: [Xamarin's GitHub](https://github.com/xamarin) 
+Check it out on github: [Xamarin's GitHub](https://github.com/xamarin)
 
 # Why use Xamarin?
 ### Code Sharing

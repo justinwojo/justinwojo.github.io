@@ -1,0 +1,139 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import ResumeSection from '../components/ResumeSection.astro';
+---
+
+<PageLayout title="Resume" description="Resume of Justin Wojciechowski — Staff Software Engineer.">
+  <h1 class="mb-2 text-3xl font-bold text-[var(--color-text)]">Justin Wojciechowski</h1>
+  <p class="mb-2 text-lg text-[var(--color-text-muted)]">Staff Software Engineer</p>
+  <p class="mb-1 text-sm text-[var(--color-text-muted)]">Savage, MN</p>
+  <p class="mb-8 text-sm text-[var(--color-text-muted)]">
+    <a href="mailto:justin@wojosoftware.com" class="text-[var(--color-accent)] hover:text-[var(--color-accent-hover)]">justin@wojosoftware.com</a>
+    <span class="mx-2">&middot;</span>
+    <a href="https://www.linkedin.com/in/justin-wojciechowski/" target="_blank" rel="noopener noreferrer" class="text-[var(--color-accent)] hover:text-[var(--color-accent-hover)]">LinkedIn</a>
+    <span class="mx-2">&middot;</span>
+    <a href="https://github.com/justinwojo" target="_blank" rel="noopener noreferrer" class="text-[var(--color-accent)] hover:text-[var(--color-accent-hover)]">GitHub</a>
+  </p>
+
+  <ResumeSection title="About">
+    <p class="text-[var(--color-text-muted)] leading-relaxed">
+      Staff Software Engineer with 10+ years of experience building and leading mobile teams.
+      Proven track record shipping Android and iOS apps at scale, standing up CI/CD systems from
+      scratch, and driving engineering best practices across organizations. Passionate about
+      automation, developer experience, and shipping quality software fast.
+    </p>
+  </ResumeSection>
+
+  <ResumeSection title="Experience">
+    <div class="space-y-8">
+      <div>
+        <h3 class="font-semibold text-[var(--color-text)]">Raptor Technologies</h3>
+        <div class="mt-1 space-y-0.5">
+          <div class="flex flex-col justify-between gap-0.5 sm:flex-row sm:items-baseline">
+            <p class="text-sm text-[var(--color-text-muted)]">Staff Software Engineer</p>
+            <span class="text-sm text-[var(--color-text-muted)]">Mar 2024 &ndash; Present</span>
+          </div>
+          <div class="flex flex-col justify-between gap-0.5 sm:flex-row sm:items-baseline">
+            <p class="text-sm text-[var(--color-text-muted)]">Lead Software Engineer</p>
+            <span class="text-sm text-[var(--color-text-muted)]">Feb 2022 &ndash; Mar 2024</span>
+          </div>
+          <p class="text-xs text-[var(--color-text-muted)] italic">Joined as SchoolPass; acquired by Raptor Technologies in 2023</p>
+        </div>
+        <ul class="mt-3 list-disc space-y-1 pl-5 text-sm text-[var(--color-text-muted)]">
+          <li>Lead engineer of four mobile applications across multiple acquired product lines.</li>
+          <li>Manage processes, releases, project intake and estimation, along with release monitoring and alerting.</li>
+          <li>Transitioned developers and apps from multiple company acquisitions into a unified engineering org.</li>
+          <li>Provide mentorship to engineers of all levels and establish best practices company-wide across technology.</li>
+          <li>Created and maintain CI/CD pipelines to fully automate multiple app releases with quality gates and approval workflows.</li>
+          <li>Solely built an iOS and Android app from scratch in 6 weeks to hit a beta date; went live in app stores 2 weeks after beta.</li>
+          <li>Defined and established best practices and standards across Product, Engineering, and QA to improve productivity, delivery speed, and quality.</li>
+          <li>Implemented a complete CI/CD system in Azure Pipelines, including static code analysis (SonarCloud) and unit test enforcement on pull requests across multiple teams.</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="font-semibold text-[var(--color-text)]">Life Time Fitness</h3>
+        <div class="mt-1 space-y-0.5">
+          <div class="flex flex-col justify-between gap-0.5 sm:flex-row sm:items-baseline">
+            <p class="text-sm text-[var(--color-text-muted)]">Lead Mobile Engineer</p>
+            <span class="text-sm text-[var(--color-text-muted)]">May 2019 &ndash; Feb 2022</span>
+          </div>
+          <div class="flex flex-col justify-between gap-0.5 sm:flex-row sm:items-baseline">
+            <p class="text-sm text-[var(--color-text-muted)]">Senior Mobile Engineer</p>
+            <span class="text-sm text-[var(--color-text-muted)]">Oct 2017 &ndash; Apr 2019</span>
+          </div>
+        </div>
+        <ul class="mt-3 list-disc space-y-1 pl-5 text-sm text-[var(--color-text-muted)]">
+          <li>Led a team of 6 engineers across MN, remote US, and India/Europe.</li>
+          <li>Delivered high-quality Android and iOS apps to Life Time members for class schedules, spa bookings, and more.</li>
+          <li>Built a new CI/CD system from the ground up to support the mobile team.</li>
+          <li>Drove app store ratings from 2.7/3.2 stars to 4.7/4.8 stars within a year.</li>
+          <li>Built highly optimized REST APIs for mobile consumption.</li>
+          <li>Implemented REST APIs and mobile features for a Spa booking experience that paid for the MVP tenfold within the first month.</li>
+          <li>Owned mobile analytics strategy using Adobe Analytics, App Center Analytics, and Azure Application Insights.</li>
+          <li>Integrated Bluetooth Low Energy (BLE) devices into the mobile platform.</li>
+          <li>Partnered with the business to define requirements and provide estimates for mobile team projects.</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="font-semibold text-[var(--color-text)]">PeopleNet</h3>
+        <div class="mt-1 space-y-0.5">
+          <div class="flex flex-col justify-between gap-0.5 sm:flex-row sm:items-baseline">
+            <p class="text-sm text-[var(--color-text-muted)]">DevOps Engineer 2</p>
+            <span class="text-sm text-[var(--color-text-muted)]">Jun 2017 &ndash; Oct 2017</span>
+          </div>
+          <div class="flex flex-col justify-between gap-0.5 sm:flex-row sm:items-baseline">
+            <p class="text-sm text-[var(--color-text-muted)]">Software Engineer 3 / Software Engineer 1</p>
+            <span class="text-sm text-[var(--color-text-muted)]">Jun 2015 &ndash; May 2017</span>
+          </div>
+        </div>
+        <ul class="mt-3 list-disc space-y-1 pl-5 text-sm text-[var(--color-text-muted)]">
+          <li>Built a new DevOps infrastructure utilizing Kubernetes, Docker, Jenkins, and other automation tools.</li>
+          <li>Migrated teams from legacy infrastructure to the new platform.</li>
+          <li>Led an agile/scrum team building cross-platform mobile applications with Xamarin.</li>
+          <li>Onboarded and trained new mobile development hires; created the onboarding process from scratch.</li>
+          <li>Reworked the UI to be more responsive, intuitive, and modern alongside new features.</li>
+          <li>Re-architected key areas to improve performance and expand functionality.</li>
+          <li>Proposed and implemented a new software release cycle, version control strategy, and CI system.</li>
+        </ul>
+      </div>
+    </div>
+  </ResumeSection>
+
+  <ResumeSection title="Skills">
+    <div class="flex flex-wrap gap-2">
+      {[
+        'C#', '.NET', 'Java', 'Kotlin', 'SQL',
+        'ASP.NET', 'HTML', 'CSS', 'XML',
+        'Mobile Development', 'Android', 'iOS',
+        'Cross-Platform Development',
+        'MVC/MVVM', 'REST APIs',
+        'Visual Studio', 'Android Studio',
+        'Git', 'JIRA', 'Azure DevOps',
+        'CI/CD', 'Jenkins', 'GitHub Actions', 'GitLab Pipelines', 'Azure Pipelines',
+        'Kubernetes', 'Docker',
+        'Agile/Scrum',
+      ].map((skill) => (
+        <span class="rounded-full bg-[var(--color-bg-tertiary)] px-3 py-1 text-sm text-[var(--color-text-muted)]">
+          {skill}
+        </span>
+      ))}
+    </div>
+  </ResumeSection>
+
+  <ResumeSection title="Education">
+    <div>
+      <div class="flex flex-col justify-between gap-1 sm:flex-row sm:items-baseline">
+        <h3 class="font-semibold text-[var(--color-text)]">Bachelor of Science &middot; Software Engineering</h3>
+        <span class="text-sm text-[var(--color-text-muted)]">University of Minnesota &middot; 2015</span>
+      </div>
+    </div>
+  </ResumeSection>
+
+  <ResumeSection title="Interests">
+    <p class="text-[var(--color-text-muted)] leading-relaxed">
+      Family time with my wife and two daughters, autocross &amp; motorsports, wrenching on cars, RC cars, gaming, piano, and keeping two cats out of trouble.
+    </p>
+  </ResumeSection>
+</PageLayout>
