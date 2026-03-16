@@ -92,9 +92,9 @@ The main culprit is a Mono JIT bug where it classifies P/Invoke frames as async 
 
 Later on we discovered a new issue that affected both JIT and AOT that caused SIGABRT/SIGSEGV crashes. The issue here is it was totally random. For a given binding library, one enum would work, and another wouldn't. It became nearly impossible to try fix all of these cases across various libraries.
 
-As part of trying to fix these issues and apply workarounds, we discovered that using @_cdecl (a Swift compiler attribute) was bulletproof. Every time we used it, it just worked. The compiler attribute, @_cdecl, exports Swift functions with C calling conventions with a stable symbol name. The important part is those functions are compiled by Swift. So after some digging, we decided it was time (at least temporarily), to bypass CallConvSwift entirely and opt for @_cdecl across the board.
+As part of trying to fix these issues and apply workarounds, we discovered that using @_cdecl (a Swift compiler attribute) was bulletproof. Every time we used it, it just worked. The compiler attribute, @_cdecl, exports Swift functions with C calling conventions with a stable symbol name. The important part is those functions are compiled by Swift. So after some digging, we decided it was time (at least temporarily), to bypass CallConvSwift in the majority of cases and opt for @_cdecl anywhere we could. The CallConvSwift layers remain, so in the future if Microsoft fixes the issues, we can pretty quickly swap back. There are many advantages CallConvSwift offers over cdecl, so long-term, ideally we can switch back.
 
-The only downside is some small overhead, as it introduces one extra function call, but it certainly beats crashes and unreliability. In the future, if/when Microsoft can address some of these CallConvSwift instabilities and the Mono JIT bug, we can fairly quickly switch back to it.
+The only downside is some small overhead, as it introduces one extra function call, but it certainly beats crashes and unreliability.
 
 CallConvSwift Route:  `C# → [CallConvSwift] → Swift ABI directly → crashes sometimes`
 
