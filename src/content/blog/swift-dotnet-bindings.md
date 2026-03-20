@@ -86,17 +86,17 @@ For example, CoreGraphics.CGRect is a type you've probably used. The binding too
 
 ## Tossing in the Towel (Almost)
 
-In .NET 9, Microsoft introduced [CallConvSwift](https://learn.microsoft.com/en-us/dotnet/api/system.runtime.compilerservices.callconvswift?view=net-9.0). This is one of the key pieces of how the original Swift Bindings repo worked from Microsoft. In a nutshell, it allows C# to call P/Invoke directly into Swift functions using Swift's native ABI.
+As we added more and more Swift features, it quickly became a bit of an unstable mess. The binding would get generated fine, we'd run it on a simulator, and it'd crash. Claude would dig into it, make a determination as to what the issue is, make a fix, and it'd work. Then I'd try run that exact same binding and code on my iPhone, and it'd crash. This was a pretty familiar loop for a long time, to the point where I was convinced that this entire repo was just going to get thrown away due to the instability.
 
-In .Net iOS (or MAUI on iOS), when you're running your app on a simulator, the app will run using Mono JIT. When you run it on a physical iPhone, it'll run with NativeAOT. The key thing to understand here is the way that P/Invoke calls happen are fundamentally different on each. In Mono JIT, the P/Invoke call happens at runtime. It has to interpret CallConvSwift and generate machine code, which is then used to place arguments in Swift-convention registers on the fly. Compared to the AOT compiler, the P/Invoke calls are generated at compile time. It statically emits that machine code with the correct Swift register assignments.
+Before we dive in, there's one key component to understand, which is [CallConvSwift](https://learn.microsoft.com/en-us/dotnet/api/system.runtime.compilerservices.callconvswift?view=net-9.0). In a nutshell, this .NET 9 addition allows C# to call P/Invoke directly into Swift functions using Swift's native ABI.
 
-As we added more and more Swift features, it quickly became an unstable mess. The binding would get generated fine, we'd run it on a simulator, and it'd crash. Claude would dig into it, make a determination as to what the issue is, make a fix, and it'd work. Then I'd try run that exact same binding and code on my iPhone, and it'd crash. This was a pretty familiar loop for a long time, to the point where I was convinced that this entire repo was just going to get thrown away due to the instability.
+In .Net iOS (or MAUI on iOS), when you're running your app on a simulator, the app will run using Mono JIT. When you run it on a physical iPhone, it'll run with NativeAOT. The key thing to understand here is the way that P/Invoke calls happen are fundamentally different on each. This can lead to a situation where CallConvSwift translation works in Mono JIT and not in NativeAOT, or vice versa.
 
 After a while, Claude made a determination that there was a Mono JIT bug where it classified P/Invoke frames as async when they're not, which affected a significant amount of features. After digging into it, we determined we could "fix" it by building a workaround just for simulators, and it technically worked. However, this wasn't the only issue, there were more. Same flow, Claude determined it was a Mono JIT issue with CallConvSwift, add another lengthy workaround, proceed. A very similar situation happened with NativeAOT, Claude determined there were bugs, find "fixes" (workarounds), repeat.
 
 I can't say how many crashes later, but I finally lost all confidence in what we were building. I finally had to take a step back, and rethink our direction.
 
-### When Trusting Claude Goes Wrong
+### The Pivot
 
 After some retrospective of the "fixes" Claude was making, it determined that using @_cdecl (a Swift compiler attribute) was bulletproof. Every time we used it, it just worked. The compiler attribute, @_cdecl, exports Swift functions with C calling conventions with a stable symbol name. The important part is those functions are compiled by Swift. So after some digging, we decided it was time (at least temporarily), to bypass CallConvSwift in the majority of cases and opt for @_cdecl anywhere we could. The CallConvSwift layer remains, so we could switch back in the future.
 
@@ -108,20 +108,27 @@ CDecl Route:   `C# → [Cdecl] → @_cdecl wrapper → Swift ABI internally → 
 
 After a week of migrating, with roughly 80% of all binding code using cdecl instead of CallConvSwift, we were still running into crashes, and instability. In almost every case, similar to before, Claude would find a fix, and eventually we had some level of stability in quite a few binding libraries.
 
-So, where did things go totally wrong? I had Claude maintain various bug reports for the Mono JIT and NativeAOT issues, so I could file them once the repo was public. When you submit issues, they often request for a small sample repo to reproduce the issues. I of course had this binding repo to share, but it had too many moving pieces, and I wanted to keep it simple, so I had Claude create a minimal repo with reproduction of the bugs.
+### When Trusting Claude Goes Wrong
+
+I had Claude maintain various bug reports for the Mono JIT and NativeAOT issues, so I could file them once the repo was public. When you submit issues, they often request for a small sample repo to reproduce the issues. I of course had this binding repo to share, but it had too many moving pieces, and I wanted to keep it simple, so I had Claude create a minimal repo with reproduction of the bugs.
 
 Here's where I started to question.....everything. Claude wrote up a simple test app, and it started with the Mono JIT P/Invoke async issue I mentioned above. To say what happened next was unexpected would be an understatement. I simply read the words that Claude so nicely bolded for me "***This is enlightening!***". It worked!? Certainly Claude messed up the test, right? After all, it was so confident in the original diagnosis, even after dozens of sessions running into the crashes caused by it and making workarounds.
 
 Sure enough, everything we thought we knew, we didn't. Each issue it tried to reproduce in this test app, passed with flying colors. Almost every Mono JIT issue worked. I then had it do the same tests for NativeAOT, and sure enough, most things passed.
 
-All of that time, all of those sessions, all of those crashes, and the workarounds, wasted. Rarely do I ever feel defeated, but it certainly felt like it for a bit.
+All of that time, all of those sessions, all of those crashes, and the workarounds, wasted. 
+
+Rarely do I ever feel defeated, but it certainly felt like it for a bit.
 
 ### What Now?
 
 After having Claude triple check its findings, it was confident that almost every single issue was in our binding generation. While this was painful, it also meant there was a light at the end of the tunnel. Being held up by Microsoft was a worst-case scenario, and this meant that we might not be anymore. It meant there was a path where I could deliver a stable binding tool, something I wasn't sure I could do before this point.
 
-As part of this reproduction testing, we did discover a few bugs in NativeAOT and Mono JIT though, but they were completely different from what Claude assumed originally. On the bright side, the workarounds for these bugs were to use cdecl, which we already had done the work for, so not everything was throwaway from that diversion.
+As part of this reproduction testing, we did discover a few bugs in NativeAOT and Mono JIT though, but they were completely different from what Claude assumed originally. On the bright side, the workarounds for these bugs were to use cdecl, which we already had done the work for, so not everything was throwaway from that diversion. 
 
+The takeaway from all of this, as cliché as the saying is, sometimes you need to slow down to speed up. Instead of going with the narrative, I should have stopped, and really honed in on the original issue instead of trusting the initial gut instinct.
+
+At the end of the day, we learn, we improve, we move on.
 
 ## Why Bother Replacing Objective Sharpie?
 
