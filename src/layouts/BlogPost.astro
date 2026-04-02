@@ -26,6 +26,11 @@ const formattedDate = date.toLocaleDateString('en-US', {
   <Header />
   <main class="mx-auto w-full max-w-4xl flex-1 px-6 py-12">
     <article>
+      {image && (
+        <div class="mb-8 overflow-hidden rounded-lg aspect-[1000/420]">
+          <img src={image} alt={title} class="h-full w-full object-cover" />
+        </div>
+      )}
       <header class="mb-10">
         <p class="mb-2 text-sm text-[var(--color-text-muted)]">{formattedDate}</p>
         <h1 class="mb-4 text-3xl font-bold leading-tight text-[var(--color-text)] sm:text-4xl">

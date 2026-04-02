@@ -3,10 +3,8 @@ title: "Swift .NET Bindings: The Objective Sharpie Replacement for .NET MAUI and
 description: "Generate C# bindings from any Swift or Objective-C framework with one command. No proxy libraries, no bridging headers, no [Verify] attributes. The modern binding tool for .NET MAUI and .NET iOS developers."
 date: 2026-04-02
 tags: ["software"]
-image: "/images/swift-dotnet-bindings/icon-large.jpeg"
+image: "/images/swift-dotnet-bindings/cover.jpg"
 ---
-
-<img src="/images/swift-dotnet-bindings/icon-large.jpeg" alt="swift-dotnet-bindings" width="180" style="display:block; margin:0 auto 1.5rem;" />
 
 Objective Sharpie is no longer maintained. It doesn't work with modern Xcode without workarounds, and it has zero support for Swift-only frameworks — meaning StoreKit 2, SwiftUI, WeatherKit, Swift Charts, and the growing list of Swift-first Apple APIs are completely out of reach for .NET developers.
 
