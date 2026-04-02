@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://wojosoftware.com/sitemap-index.xml
