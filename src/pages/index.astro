@@ -39,16 +39,6 @@ const posts = (await getCollection('blog'))
     </div>
   </section>
 
-  <section class="mb-16 rounded-lg border border-[var(--color-border)] p-6">
-    <h2 class="mb-3 text-2xl font-semibold text-[var(--color-text)]">Wojo Software LLC</h2>
-    <p class="max-w-2xl leading-relaxed text-[var(--color-text-muted)]">
-      Wojo Software LLC is the developer of
-      <a href="https://calibeam.app" class="text-[var(--color-accent)] hover:text-[var(--color-accent-hover)]">Calibeam</a>,
-      a guided display-calibration app for projectors and TVs on macOS and Windows.
-      Contact: <a href="mailto:justin@wojosoftware.com" class="text-[var(--color-accent)] hover:text-[var(--color-accent-hover)]">justin@wojosoftware.com</a>
-    </p>
-  </section>
-
   {posts.length > 0 && (
     <section>
       <div class="mb-6 flex items-center justify-between">
